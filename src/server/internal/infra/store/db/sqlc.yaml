@@ -1,0 +1,12 @@
+version: "2"
+sql:
+- schema: "./migration"
+  queries: "./query"
+  engine: "postgresql"
+  gen:
+    go: 
+      out: "./sqlc"
+      sql_package: "pgx/v5"
+      emit_pointers_for_null_types: true
+  database:
+    uri: "postgres://coinmaster:coinpass@localhost:5432/coin?sslmode=disable"
